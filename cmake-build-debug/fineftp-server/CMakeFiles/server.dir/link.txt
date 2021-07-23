@@ -1,0 +1,2 @@
+/usr/bin/ar qc libfineftp-server.a CMakeFiles/server.dir/src/filesystem.cpp.o CMakeFiles/server.dir/src/ftp_session.cpp.o CMakeFiles/server.dir/src/server.cpp.o CMakeFiles/server.dir/src/server_impl.cpp.o CMakeFiles/server.dir/src/user_database.cpp.o CMakeFiles/server.dir/src/fileinfo.cpp.o CMakeFiles/server.dir/src/fileiointerface.cpp.o
+/usr/bin/ranlib libfineftp-server.a

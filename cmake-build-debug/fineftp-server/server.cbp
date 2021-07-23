@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="server"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\example\;CMake Files\fineftp-server\;CMake Files\cmake\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/andrey/fineftpvfs/cmake-build-debug/fineftp-server"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/andrey/fineftpvfs/cmake-build-debug/fineftp-server/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/andrey/fineftpvfs/cmake-build-debug/fineftp-server/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/andrey/fineftpvfs/cmake-build-debug/fineftp-server/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/andrey/fineftpvfs/cmake-build-debug/fineftp-server/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="server">
+				<Option output="/home/andrey/fineftpvfs/cmake-build-debug/fineftp-server/libfineftp-server.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/andrey/fineftpvfs/cmake-build-debug/fineftp-server"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DASIO_STANDALONE"/>
+					<Add option="-DASIO_DISABLE_VISIBILITY"/>
+					<Add option="-D__USE_FILE_OFFSET64=1"/>
+					<Add option="-D_WIN32_WINNT=0x0601"/>
+					<Add directory="/home/andrey/fineftpvfs/fineftp-server/include"/>
+					<Add directory="/home/andrey/fineftpvfs/fineftp-server/src"/>
+					<Add directory="/home/andrey/fineftpvfs/thirdparty/asio/asio/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/andrey/fineftpvfs/cmake-build-debug/fineftp-server/Makefile&quot;  VERBOSE=1 server"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/andrey/fineftpvfs/cmake-build-debug/fineftp-server/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/andrey/fineftpvfs/cmake-build-debug/fineftp-server/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/andrey/fineftpvfs/cmake-build-debug/fineftp-server/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="server/fast">
+				<Option output="/home/andrey/fineftpvfs/cmake-build-debug/fineftp-server/libfineftp-server.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/andrey/fineftpvfs/cmake-build-debug/fineftp-server"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DASIO_STANDALONE"/>
+					<Add option="-DASIO_DISABLE_VISIBILITY"/>
+					<Add option="-D__USE_FILE_OFFSET64=1"/>
+					<Add option="-D_WIN32_WINNT=0x0601"/>
+					<Add directory="/home/andrey/fineftpvfs/fineftp-server/include"/>
+					<Add directory="/home/andrey/fineftpvfs/fineftp-server/src"/>
+					<Add directory="/home/andrey/fineftpvfs/thirdparty/asio/asio/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/andrey/fineftpvfs/cmake-build-debug/fineftp-server/Makefile&quot;  VERBOSE=1 server/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/andrey/fineftpvfs/cmake-build-debug/fineftp-server/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/andrey/fineftpvfs/cmake-build-debug/fineftp-server/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/andrey/fineftpvfs/cmake-build-debug/fineftp-server/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/andrey/fineftpvfs/fineftp-server/include/fineftp/fileinfo.h">
+			<Option target="server"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/fineftp-server/include/fineftp/fileiointerface.h">
+			<Option target="server"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/fineftp-server/include/fineftp/permissions.h">
+			<Option target="server"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/fineftp-server/include/fineftp/server.h">
+			<Option target="server"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/fineftp-server/src/fileinfo.cpp">
+			<Option target="server"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/fineftp-server/src/fileiointerface.cpp">
+			<Option target="server"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/fineftp-server/src/filesystem.cpp">
+			<Option target="server"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/fineftp-server/src/filesystem.h">
+			<Option target="server"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/fineftp-server/src/ftp_message.h">
+			<Option target="server"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/fineftp-server/src/ftp_session.cpp">
+			<Option target="server"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/fineftp-server/src/ftp_session.h">
+			<Option target="server"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/fineftp-server/src/ftp_user.h">
+			<Option target="server"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/fineftp-server/src/server.cpp">
+			<Option target="server"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/fineftp-server/src/server_impl.cpp">
+			<Option target="server"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/fineftp-server/src/server_impl.h">
+			<Option target="server"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/fineftp-server/src/user_database.cpp">
+			<Option target="server"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/fineftp-server/src/user_database.h">
+			<Option target="server"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/msvc_sourcetree.cmake">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/example/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\example\"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/fineftp-server/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\fineftp-server\"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/cmake/Findasio.cmake">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/cmake/fineftpConfig.cmake.in">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
