@@ -1,18 +1,26 @@
 cmake_minimum_required(VERSION 3.5.1)
 
-project(example)
+project(vfsftp)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 
 find_package(fineftp REQUIRED CONFIG)
 
 set(sources
     src/main.cpp
+    src/plugins/gcfselement.cpp
+    src/plugins/gcfilesystem.cpp
+    src/plugins/utils.cpp
 )
 
 set(headers
         src/plugins/vfsfileintf.h
-        src/plugins/vfsfileinfo.h)
+        src/plugins/vfsfileinfo.h
+        src/plugins/gcfilesystem.h
+        src/plugins/gcfselement.h
+        src/plugins/utils.h)
+
+add_subdirectory(fmt)
 
 add_executable (${PROJECT_NAME}
     ${sources}
@@ -20,4 +28,6 @@ add_executable (${PROJECT_NAME}
 
 target_link_libraries (${PROJECT_NAME}
     fineftp::server
+    stdc++fs
+    fmt
 )

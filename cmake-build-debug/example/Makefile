@@ -99,28 +99,6 @@ install/local/fast: preinstall/fast
 	/home/andrey/clion-2020.2.3/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/andrey/clion-2020.2.3/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/andrey/clion-2020.2.3/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -142,6 +120,28 @@ list_install_components:
 list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/home/andrey/clion-2020.2.3/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/home/andrey/clion-2020.2.3/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -176,19 +176,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-example/CMakeFiles/example.dir/rule:
-	cd /home/andrey/fineftpvfs/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/CMakeFiles/example.dir/rule
-.PHONY : example/CMakeFiles/example.dir/rule
+example/CMakeFiles/vfsftp.dir/rule:
+	cd /home/andrey/fineftpvfs/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/CMakeFiles/vfsftp.dir/rule
+.PHONY : example/CMakeFiles/vfsftp.dir/rule
 
 # Convenience name for target.
-example: example/CMakeFiles/example.dir/rule
+vfsftp: example/CMakeFiles/vfsftp.dir/rule
 
-.PHONY : example
+.PHONY : vfsftp
 
 # fast build rule for target.
-example/fast:
-	cd /home/andrey/fineftpvfs/cmake-build-debug && $(MAKE) $(MAKESILENT) -f example/CMakeFiles/example.dir/build.make example/CMakeFiles/example.dir/build
-.PHONY : example/fast
+vfsftp/fast:
+	cd /home/andrey/fineftpvfs/cmake-build-debug && $(MAKE) $(MAKESILENT) -f example/CMakeFiles/vfsftp.dir/build.make example/CMakeFiles/vfsftp.dir/build
+.PHONY : vfsftp/fast
 
 src/main.o: src/main.cpp.o
 
@@ -196,7 +196,7 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
-	cd /home/andrey/fineftpvfs/cmake-build-debug && $(MAKE) $(MAKESILENT) -f example/CMakeFiles/example.dir/build.make example/CMakeFiles/example.dir/src/main.cpp.o
+	cd /home/andrey/fineftpvfs/cmake-build-debug && $(MAKE) $(MAKESILENT) -f example/CMakeFiles/vfsftp.dir/build.make example/CMakeFiles/vfsftp.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -205,7 +205,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	cd /home/andrey/fineftpvfs/cmake-build-debug && $(MAKE) $(MAKESILENT) -f example/CMakeFiles/example.dir/build.make example/CMakeFiles/example.dir/src/main.cpp.i
+	cd /home/andrey/fineftpvfs/cmake-build-debug && $(MAKE) $(MAKESILENT) -f example/CMakeFiles/vfsftp.dir/build.make example/CMakeFiles/vfsftp.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -214,8 +214,89 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	cd /home/andrey/fineftpvfs/cmake-build-debug && $(MAKE) $(MAKESILENT) -f example/CMakeFiles/example.dir/build.make example/CMakeFiles/example.dir/src/main.cpp.s
+	cd /home/andrey/fineftpvfs/cmake-build-debug && $(MAKE) $(MAKESILENT) -f example/CMakeFiles/vfsftp.dir/build.make example/CMakeFiles/vfsftp.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
+
+src/plugins/gcfilesystem.o: src/plugins/gcfilesystem.cpp.o
+
+.PHONY : src/plugins/gcfilesystem.o
+
+# target to build an object file
+src/plugins/gcfilesystem.cpp.o:
+	cd /home/andrey/fineftpvfs/cmake-build-debug && $(MAKE) $(MAKESILENT) -f example/CMakeFiles/vfsftp.dir/build.make example/CMakeFiles/vfsftp.dir/src/plugins/gcfilesystem.cpp.o
+.PHONY : src/plugins/gcfilesystem.cpp.o
+
+src/plugins/gcfilesystem.i: src/plugins/gcfilesystem.cpp.i
+
+.PHONY : src/plugins/gcfilesystem.i
+
+# target to preprocess a source file
+src/plugins/gcfilesystem.cpp.i:
+	cd /home/andrey/fineftpvfs/cmake-build-debug && $(MAKE) $(MAKESILENT) -f example/CMakeFiles/vfsftp.dir/build.make example/CMakeFiles/vfsftp.dir/src/plugins/gcfilesystem.cpp.i
+.PHONY : src/plugins/gcfilesystem.cpp.i
+
+src/plugins/gcfilesystem.s: src/plugins/gcfilesystem.cpp.s
+
+.PHONY : src/plugins/gcfilesystem.s
+
+# target to generate assembly for a file
+src/plugins/gcfilesystem.cpp.s:
+	cd /home/andrey/fineftpvfs/cmake-build-debug && $(MAKE) $(MAKESILENT) -f example/CMakeFiles/vfsftp.dir/build.make example/CMakeFiles/vfsftp.dir/src/plugins/gcfilesystem.cpp.s
+.PHONY : src/plugins/gcfilesystem.cpp.s
+
+src/plugins/gcfselement.o: src/plugins/gcfselement.cpp.o
+
+.PHONY : src/plugins/gcfselement.o
+
+# target to build an object file
+src/plugins/gcfselement.cpp.o:
+	cd /home/andrey/fineftpvfs/cmake-build-debug && $(MAKE) $(MAKESILENT) -f example/CMakeFiles/vfsftp.dir/build.make example/CMakeFiles/vfsftp.dir/src/plugins/gcfselement.cpp.o
+.PHONY : src/plugins/gcfselement.cpp.o
+
+src/plugins/gcfselement.i: src/plugins/gcfselement.cpp.i
+
+.PHONY : src/plugins/gcfselement.i
+
+# target to preprocess a source file
+src/plugins/gcfselement.cpp.i:
+	cd /home/andrey/fineftpvfs/cmake-build-debug && $(MAKE) $(MAKESILENT) -f example/CMakeFiles/vfsftp.dir/build.make example/CMakeFiles/vfsftp.dir/src/plugins/gcfselement.cpp.i
+.PHONY : src/plugins/gcfselement.cpp.i
+
+src/plugins/gcfselement.s: src/plugins/gcfselement.cpp.s
+
+.PHONY : src/plugins/gcfselement.s
+
+# target to generate assembly for a file
+src/plugins/gcfselement.cpp.s:
+	cd /home/andrey/fineftpvfs/cmake-build-debug && $(MAKE) $(MAKESILENT) -f example/CMakeFiles/vfsftp.dir/build.make example/CMakeFiles/vfsftp.dir/src/plugins/gcfselement.cpp.s
+.PHONY : src/plugins/gcfselement.cpp.s
+
+src/plugins/utils.o: src/plugins/utils.cpp.o
+
+.PHONY : src/plugins/utils.o
+
+# target to build an object file
+src/plugins/utils.cpp.o:
+	cd /home/andrey/fineftpvfs/cmake-build-debug && $(MAKE) $(MAKESILENT) -f example/CMakeFiles/vfsftp.dir/build.make example/CMakeFiles/vfsftp.dir/src/plugins/utils.cpp.o
+.PHONY : src/plugins/utils.cpp.o
+
+src/plugins/utils.i: src/plugins/utils.cpp.i
+
+.PHONY : src/plugins/utils.i
+
+# target to preprocess a source file
+src/plugins/utils.cpp.i:
+	cd /home/andrey/fineftpvfs/cmake-build-debug && $(MAKE) $(MAKESILENT) -f example/CMakeFiles/vfsftp.dir/build.make example/CMakeFiles/vfsftp.dir/src/plugins/utils.cpp.i
+.PHONY : src/plugins/utils.cpp.i
+
+src/plugins/utils.s: src/plugins/utils.cpp.s
+
+.PHONY : src/plugins/utils.s
+
+# target to generate assembly for a file
+src/plugins/utils.cpp.s:
+	cd /home/andrey/fineftpvfs/cmake-build-debug && $(MAKE) $(MAKESILENT) -f example/CMakeFiles/vfsftp.dir/build.make example/CMakeFiles/vfsftp.dir/src/plugins/utils.cpp.s
+.PHONY : src/plugins/utils.cpp.s
 
 # Help Target
 help:
@@ -229,10 +310,19 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... example"
+	@echo "... vfsftp"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/plugins/gcfilesystem.o"
+	@echo "... src/plugins/gcfilesystem.i"
+	@echo "... src/plugins/gcfilesystem.s"
+	@echo "... src/plugins/gcfselement.o"
+	@echo "... src/plugins/gcfselement.i"
+	@echo "... src/plugins/gcfselement.s"
+	@echo "... src/plugins/utils.o"
+	@echo "... src/plugins/utils.i"
+	@echo "... src/plugins/utils.s"
 .PHONY : help
 
 

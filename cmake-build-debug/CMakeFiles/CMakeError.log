@@ -63,3 +63,37 @@ make: *** [cmTC_76cf8/fast] Error 2
 
 
 
+Determining if the strtod_l exist failed with the following output:
+Change Dir: /home/andrey/fineftpvfs/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_fab82/fast && /usr/bin/make  -f CMakeFiles/cmTC_fab82.dir/build.make CMakeFiles/cmTC_fab82.dir/build
+make[1]: Entering directory '/home/andrey/fineftpvfs/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fab82.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_fab82.dir/CheckSymbolExists.c.o -c /home/andrey/fineftpvfs/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/andrey/fineftpvfs/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/andrey/fineftpvfs/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘strtod_l’ undeclared (first use in this function); did you mean ‘strtoull’?
+   return ((int*)(&strtod_l))[argc];
+                   ^~~~~~~~
+                   strtoull
+/home/andrey/fineftpvfs/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_fab82.dir/build.make:84: recipe for target 'CMakeFiles/cmTC_fab82.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_fab82.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/andrey/fineftpvfs/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:140: recipe for target 'cmTC_fab82/fast' failed
+make: *** [cmTC_fab82/fast] Error 2
+
+
+File /home/andrey/fineftpvfs/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdlib.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strtod_l
+  return ((int*)(&strtod_l))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}

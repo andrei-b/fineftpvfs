@@ -3,7 +3,7 @@
 #include "plugins/vfsfileintf.h"
 #include <fineftp/fileinfo.h>
 #include "plugins/vfsfileinfo.h"
-
+#include "plugins/gcfilesystem.h"
 #include <iostream>
 #include <thread>
 #include <string>
@@ -15,7 +15,7 @@ int main() {
 #else // WIN32
   std::string local_root =  "/";
 #endif // WIN32
-
+  GCFS::GCFileSystem::instance().makeSystem("/home/andrey/gcodes");
   fineftp::Filesystem::registerFileInterfaceFabric([](){return std::make_shared<VFSFileIntf>();});
   fineftp::Filesystem::registerFileInfoFabric([](const std::string & name) {return std::make_shared<VFSFileInfo>(name);});
 

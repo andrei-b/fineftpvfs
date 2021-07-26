@@ -189,17 +189,30 @@ server/fast:
 .PHONY : server/fast
 
 #=============================================================================
-# Target rules for targets named example
+# Target rules for targets named vfsftp
 
 # Build rule for target.
-example: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example
-.PHONY : example
+vfsftp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vfsftp
+.PHONY : vfsftp
 
 # fast build rule for target.
-example/fast:
-	$(MAKE) $(MAKESILENT) -f example/CMakeFiles/example.dir/build.make example/CMakeFiles/example.dir/build
-.PHONY : example/fast
+vfsftp/fast:
+	$(MAKE) $(MAKESILENT) -f example/CMakeFiles/vfsftp.dir/build.make example/CMakeFiles/vfsftp.dir/build
+.PHONY : vfsftp/fast
+
+#=============================================================================
+# Target rules for targets named fmt
+
+# Build rule for target.
+fmt: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 fmt
+.PHONY : fmt
+
+# fast build rule for target.
+fmt/fast:
+	$(MAKE) $(MAKESILENT) -f example/fmt/CMakeFiles/fmt.dir/build.make example/fmt/CMakeFiles/fmt.dir/build
+.PHONY : fmt/fast
 
 # Help Target
 help:
@@ -213,8 +226,9 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... example"
+	@echo "... fmt"
 	@echo "... server"
+	@echo "... vfsftp"
 .PHONY : help
 
 

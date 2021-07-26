@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/vfsftp.dir/src/main.cpp.o CMakeFiles/vfsftp.dir/src/plugins/gcfselement.cpp.o CMakeFiles/vfsftp.dir/src/plugins/gcfilesystem.cpp.o CMakeFiles/vfsftp.dir/src/plugins/utils.cpp.o -o vfsftp  ../fineftp-server/libfineftp-server.a -lstdc++fs fmt/libfmtd.a -lpthread 

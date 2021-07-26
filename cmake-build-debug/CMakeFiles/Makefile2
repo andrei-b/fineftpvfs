@@ -93,19 +93,39 @@ clean: example/clean
 # Directory level rules for directory example
 
 # Recursive "all" directory target.
-example/all: example/CMakeFiles/example.dir/all
+example/all: example/CMakeFiles/vfsftp.dir/all
+example/all: example/fmt/all
 
 .PHONY : example/all
 
 # Recursive "preinstall" directory target.
-example/preinstall:
+example/preinstall: example/fmt/preinstall
 
 .PHONY : example/preinstall
 
 # Recursive "clean" directory target.
-example/clean: example/CMakeFiles/example.dir/clean
+example/clean: example/CMakeFiles/vfsftp.dir/clean
+example/clean: example/fmt/clean
 
 .PHONY : example/clean
+
+#=============================================================================
+# Directory level rules for directory example/fmt
+
+# Recursive "all" directory target.
+example/fmt/all: example/fmt/CMakeFiles/fmt.dir/all
+
+.PHONY : example/fmt/all
+
+# Recursive "preinstall" directory target.
+example/fmt/preinstall:
+
+.PHONY : example/fmt/preinstall
+
+# Recursive "clean" directory target.
+example/fmt/clean: example/fmt/CMakeFiles/fmt.dir/clean
+
+.PHONY : example/fmt/clean
 
 #=============================================================================
 # Directory level rules for directory fineftp-server
@@ -132,7 +152,7 @@ fineftp-server/clean: fineftp-server/CMakeFiles/server.dir/clean
 fineftp-server/CMakeFiles/server.dir/all:
 	$(MAKE) $(MAKESILENT) -f fineftp-server/CMakeFiles/server.dir/build.make fineftp-server/CMakeFiles/server.dir/depend
 	$(MAKE) $(MAKESILENT) -f fineftp-server/CMakeFiles/server.dir/build.make fineftp-server/CMakeFiles/server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andrey/fineftpvfs/cmake-build-debug/CMakeFiles --progress-num=3,4,5,6,7,8,9,10 "Built target server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andrey/fineftpvfs/cmake-build-debug/CMakeFiles --progress-num=4,5,6,7,8,9,10,11 "Built target server"
 .PHONY : fineftp-server/CMakeFiles/server.dir/all
 
 # Build rule for subdir invocation for target.
@@ -153,31 +173,59 @@ fineftp-server/CMakeFiles/server.dir/clean:
 .PHONY : fineftp-server/CMakeFiles/server.dir/clean
 
 #=============================================================================
-# Target rules for target example/CMakeFiles/example.dir
+# Target rules for target example/CMakeFiles/vfsftp.dir
 
 # All Build rule for target.
-example/CMakeFiles/example.dir/all: fineftp-server/CMakeFiles/server.dir/all
-	$(MAKE) $(MAKESILENT) -f example/CMakeFiles/example.dir/build.make example/CMakeFiles/example.dir/depend
-	$(MAKE) $(MAKESILENT) -f example/CMakeFiles/example.dir/build.make example/CMakeFiles/example.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andrey/fineftpvfs/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target example"
-.PHONY : example/CMakeFiles/example.dir/all
+example/CMakeFiles/vfsftp.dir/all: fineftp-server/CMakeFiles/server.dir/all
+example/CMakeFiles/vfsftp.dir/all: example/fmt/CMakeFiles/fmt.dir/all
+	$(MAKE) $(MAKESILENT) -f example/CMakeFiles/vfsftp.dir/build.make example/CMakeFiles/vfsftp.dir/depend
+	$(MAKE) $(MAKESILENT) -f example/CMakeFiles/vfsftp.dir/build.make example/CMakeFiles/vfsftp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andrey/fineftpvfs/cmake-build-debug/CMakeFiles --progress-num=12,13,14,15,16 "Built target vfsftp"
+.PHONY : example/CMakeFiles/vfsftp.dir/all
 
 # Build rule for subdir invocation for target.
-example/CMakeFiles/example.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andrey/fineftpvfs/cmake-build-debug/CMakeFiles 10
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/CMakeFiles/example.dir/all
+example/CMakeFiles/vfsftp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andrey/fineftpvfs/cmake-build-debug/CMakeFiles 16
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/CMakeFiles/vfsftp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/andrey/fineftpvfs/cmake-build-debug/CMakeFiles 0
-.PHONY : example/CMakeFiles/example.dir/rule
+.PHONY : example/CMakeFiles/vfsftp.dir/rule
 
 # Convenience name for target.
-example: example/CMakeFiles/example.dir/rule
+vfsftp: example/CMakeFiles/vfsftp.dir/rule
 
-.PHONY : example
+.PHONY : vfsftp
 
 # clean rule for target.
-example/CMakeFiles/example.dir/clean:
-	$(MAKE) $(MAKESILENT) -f example/CMakeFiles/example.dir/build.make example/CMakeFiles/example.dir/clean
-.PHONY : example/CMakeFiles/example.dir/clean
+example/CMakeFiles/vfsftp.dir/clean:
+	$(MAKE) $(MAKESILENT) -f example/CMakeFiles/vfsftp.dir/build.make example/CMakeFiles/vfsftp.dir/clean
+.PHONY : example/CMakeFiles/vfsftp.dir/clean
+
+#=============================================================================
+# Target rules for target example/fmt/CMakeFiles/fmt.dir
+
+# All Build rule for target.
+example/fmt/CMakeFiles/fmt.dir/all:
+	$(MAKE) $(MAKESILENT) -f example/fmt/CMakeFiles/fmt.dir/build.make example/fmt/CMakeFiles/fmt.dir/depend
+	$(MAKE) $(MAKESILENT) -f example/fmt/CMakeFiles/fmt.dir/build.make example/fmt/CMakeFiles/fmt.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andrey/fineftpvfs/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target fmt"
+.PHONY : example/fmt/CMakeFiles/fmt.dir/all
+
+# Build rule for subdir invocation for target.
+example/fmt/CMakeFiles/fmt.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andrey/fineftpvfs/cmake-build-debug/CMakeFiles 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/fmt/CMakeFiles/fmt.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andrey/fineftpvfs/cmake-build-debug/CMakeFiles 0
+.PHONY : example/fmt/CMakeFiles/fmt.dir/rule
+
+# Convenience name for target.
+fmt: example/fmt/CMakeFiles/fmt.dir/rule
+
+.PHONY : fmt
+
+# clean rule for target.
+example/fmt/CMakeFiles/fmt.dir/clean:
+	$(MAKE) $(MAKESILENT) -f example/fmt/CMakeFiles/fmt.dir/build.make example/fmt/CMakeFiles/fmt.dir/clean
+.PHONY : example/fmt/CMakeFiles/fmt.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
