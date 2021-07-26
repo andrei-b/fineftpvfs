@@ -78,6 +78,7 @@ namespace GCFS {
         if (found) {
             FD result;
             result.fd = ::open(element->fileName().c_str(), O_RDONLY);
+            result.size = element->size();
             result.ioffset = element->offset();
             return result;
         }

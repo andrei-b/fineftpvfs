@@ -15,6 +15,7 @@ namespace GCFS {
     struct FD
     {
         int fd = -1;
+        int64_t size = 0;
         int64_t ioffset = 0;
     };
 

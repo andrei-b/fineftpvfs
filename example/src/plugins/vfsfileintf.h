@@ -5,15 +5,15 @@
 #ifndef FINEFTP_VFSFILEINTF_H
 #define FINEFTP_VFSFILEINTF_H
 #include <fineftp/fileiointerface.h>
+#include "gcfilesystem.h"
 
 class VFSFileIntf : public fineftp::Filesystem::FileIOInterface {
 public:
     bool open(const std::string & fileName) override
     {
-        _fileOpen = true;
+        fd = GCFS::GCFileSystem::instance().open(fileName);
+        _fileOpen = fd.fd != -1;
         _pos = 0;
-        _fileName = fileName;
-        _text = _text.append(fileName);
         return _fileOpen;
     }
     bool good() override
@@ -22,12 +22,13 @@ public:
     }
     void close() override
     {
+        GCFS::GCFileSystem::instance().close(fd);
         _fileOpen = false;
     }
     size_t size() override
     {
         //       if (good())
-        return _text.size();
+        return fd.size;
         //      return 0;
     }
     size_t seek(size_t pos) override
@@ -47,11 +48,11 @@ public:
     uint32_t read(char * buf, uint32_t bufSize) override
     {
         if (good()) {
-            auto actBytes = bufSize < size() - pos() ? bufSize : size() - pos();
-            strncpy(buf, &_text.c_str()[_pos], actBytes);
-            _pos += actBytes;
-            return actBytes;
+            auto bytes = GCFS::GCFileSystem::instance().read(fd, _pos, buf, bufSize);
+            _pos += bytes;
+            return bytes;
         }
+        return 0;
     }
     uint32_t write(const char * buf, uint32_t bufSize) override
     {
@@ -70,8 +71,7 @@ public:
         close();
     }
     bool _fileOpen = false;
-    std::string _fileName;
-    std::string _text = "This is the text of the file ";
+    GCFS::FD fd;
     int _pos = 0;
 };
 
