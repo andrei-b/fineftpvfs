@@ -170,18 +170,12 @@ vector
 gcfselement.h
 /home/andrey/fineftpvfs/example/src/plugins/gcfselement.h
 
-/home/andrey/fineftpvfs/example/src/plugins/gcfselement.cpp
-gcfselement.h
-/home/andrey/fineftpvfs/example/src/plugins/gcfselement.h
-utils.h
-/home/andrey/fineftpvfs/example/src/plugins/utils.h
-utility
--
-
 /home/andrey/fineftpvfs/example/src/plugins/gcfselement.h
 string
 -
 vector
+-
+memory
 -
 tuple
 -

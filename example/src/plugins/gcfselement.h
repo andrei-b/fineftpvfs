@@ -7,6 +7,7 @@
 
 #include <string>
 #include <vector>
+#include <memory>
 #include <tuple>
 
 
@@ -18,7 +19,7 @@ namespace GCFS {
         File
     };
 
-    class GCFSElement {
+class GCFSElement : public std::enable_shared_from_this<GCFSElement> {
     public:
         GCFSElement(std::string fileName, std::string virtualName, ElementType type, int64_t size,
                     int64_t offset = 0);
@@ -28,16 +29,17 @@ namespace GCFS {
         std::string localName() const;
         int64_t offset() const;
         int64_t size() const;
-        const std::vector<GCFSElement> children() const;
-        GCFSElement & addChild(const std::string & fileName, const std::string &relVirtualName, ElementType type, int64_t size, int64_t offset = 0);
-        std::tuple<bool, const GCFSElement> findChild(const std::string &virtualName) const;
+        const std::vector<std::shared_ptr<GCFSElement>> & children() const;
+        std::shared_ptr<GCFSElement>
+        addChild(const std::string & fileName, const std::string &relVirtualName, ElementType type, int64_t size, int64_t offset = 0);
+        std::tuple<bool, std::shared_ptr<const GCFSElement>> findChild(const std::string &virtualName) const;
     private:
         ElementType _type;
         std::string _fsName;
         std::string _virtualName;
         int64_t _offset;
         int64_t _size;
-        std::vector<GCFSElement> _children;
+        std::vector<std::shared_ptr<GCFSElement>> _children;
     };
 
 }

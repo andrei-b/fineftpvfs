@@ -30,7 +30,7 @@ namespace GCFS {
         void makeSystem(const std::string & root);
     private:
         GCFileSystem();
-        void addChildren(GCFSElement &parent, const std::string & path);
+        void addChildren(GCFSElement & parent, const std::string &path);
         std::shared_ptr<GCFSElement> _fsroot;
     };
 

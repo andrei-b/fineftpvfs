@@ -42,17 +42,17 @@ namespace GCFS {
         }
     }
 
-    void GCFileSystem::addChildren(GCFSElement &parent, const std::string &path) {
+    void GCFileSystem::addChildren(GCFSElement & parent, const std::string &path) {
         using namespace std::experimental;
         if (parent.type() == ElementType::RealDirectory) {
             for (const auto &entry : filesystem::directory_iterator(path)) {
                 if (filesystem::is_directory(entry.status())) {
                     auto newChild = parent.addChild(entry.path().string(), "", ElementType::RealDirectory, 0);
-                    addChildren(newChild, entry.path().string());
+                    addChildren(*newChild, entry.path().string());
                 } else {
                     if (filesystem::is_regular_file(entry.status())) {
-                        auto & newChild = parent.addChild(entry.path().string(), "", ElementType::VirtualDirectory, 0);
-                        addChildren(newChild, entry.path().string());
+                        auto newChild = parent.addChild(entry.path().string(), "", ElementType::VirtualDirectory, 0);
+                        addChildren(*newChild, entry.path().string());
                     }
                 }
             }
@@ -60,12 +60,13 @@ namespace GCFS {
             if (parent.type() == ElementType::VirtualDirectory) {
                 std::map<int64_t, std::string> offsets;
                 auto mainProgram = readFile(parent.fileName());
+                auto l = mainProgram.length();
                 offsetsByTag(mainProgram, LayerTagRe, offsets, "LAYER_", 2);
                 offsetsByTag(mainProgram, LabelTagRe, offsets, "label_", 1);
                 parent.addChild(parent.fileName(), "", ElementType::File, mainProgram.length());
                 int ord = 0;
                 for(const auto & r : offsets) {
-                    parent.addChild(parent.fileName(), fmt::format("{:04d}_{}.nc", ord, r.second), ElementType::File, mainProgram.length() - r.first, r.first);
+                    parent.addChild(parent.fileName(), fmt::format("{:04d}_{}.nc", ord, r.second), ElementType::File, l - r.first, r.first);
                     ord++;
                 }
             }
@@ -76,8 +77,8 @@ namespace GCFS {
         auto[found, element] = _fsroot->findChild(fileName);
         if (found) {
             FD result;
-            result.fd = ::open(element.fileName().c_str(), O_RDONLY);
-            result.ioffset = element.offset();
+            result.fd = ::open(element->fileName().c_str(), O_RDONLY);
+            result.ioffset = element->offset();
             return result;
         }
         return FD();

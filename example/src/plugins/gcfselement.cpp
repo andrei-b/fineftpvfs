@@ -12,7 +12,7 @@ namespace GCFS {
     GCFSElement::GCFSElement(std::string fileName, std::string virtualName, ElementType type,
                              int64_t size,
                              int64_t offset)
-            : _fsName(std::move(fileName)), _virtualName(std::move(virtualName)), _type(type), _offset(offset)
+            : _fsName(std::move(fileName)), _virtualName(std::move(virtualName)), _type(type), _size(size), _offset(offset)
     {}
 
     const std::string &GCFSElement::fileName() const {
@@ -27,18 +27,18 @@ namespace GCFS {
         return _offset;
     }
 
-    const std::vector<GCFSElement> GCFSElement::children() const {
+    const std::vector<std::shared_ptr<GCFSElement>> & GCFSElement::children() const {
         return _children;
     }
 
-    GCFSElement &GCFSElement::addChild(const std::string &fileName, const std::string &relVirtualName, ElementType type, int64_t size, int64_t offset) {
+    std::shared_ptr<GCFSElement> GCFSElement::addChild(const std::string &fileName, const std::string &relVirtualName, ElementType type, int64_t size, int64_t offset) {
         std::string shortName = relVirtualName;
         if (shortName.empty())
             shortName = fileName.substr(fileName.find_last_of('/') + 1);
         std::string fullName = virtualName().back() == '/' ? std::string(virtualName()).append(shortName) : std::string(virtualName()).append("/").append(shortName);
         if (fullName.back() == '/')
             fullName = fullName.substr(0, fullName.length()-1);
-        _children.emplace_back(fileName, fullName, type, size, offset);
+        _children.push_back(std::make_shared<GCFSElement>(fileName, fullName, type, size, offset));
         return _children.back();
     }
 
@@ -50,16 +50,16 @@ namespace GCFS {
         return _virtualName;
     }
 
-    std::tuple<bool, const GCFSElement> GCFSElement::findChild(const std::string &virtualName) const {
+    std::tuple<bool, std::shared_ptr<const GCFSElement>> GCFSElement::findChild(const std::string &virtualName) const {
         if (virtualName == this->virtualName())
-            return std::tuple{true, *this};
+            return std::tuple{true, shared_from_this()};
         if (virtualName.find(this->virtualName(), 0) == 0) {
             for (const auto & ch : _children) {
-                if (auto [found, child] = ch.findChild(virtualName); found)
+                if (auto [found, child] = ch->findChild(virtualName); found)
                     return std::tuple{true, child};
             }
         }
-        return std::tuple{false, *this};
+        return std::tuple{false, shared_from_this()};
     }
 
     std::string GCFSElement::localName() const {

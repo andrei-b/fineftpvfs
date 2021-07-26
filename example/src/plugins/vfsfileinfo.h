@@ -14,11 +14,11 @@ public:
     {
         if (auto[found, element] = GCFS::GCFileSystem::instance().root().findChild(name); found == true) {
             _isOk = true;
-            if (element.type() == GCFS::ElementType::File)
+            if (element->type() == GCFS::ElementType::File)
                 _type = fineftp::Filesystem::FileType::RegularFile;
             else
                 _type = fineftp::Filesystem::FileType::Dir;
-            _size = element.size();
+            _size = element->size();
         }
     };
 
@@ -49,8 +49,8 @@ public:
     std::map<std::string, std::shared_ptr<FileInfo>> dirContent() override {
         std::map<std::string, std::shared_ptr<FileInfo>> result;
         if (auto[found, element] = GCFS::GCFileSystem::instance().root().findChild(_name); found == true) {
-            for(const auto & e : element.children())
-                result.insert({e.localName(), std::make_shared<VFSFileInfo>(e.virtualName())});
+            for(const auto & e : element->children())
+                result.insert({e->localName(), std::make_shared<VFSFileInfo>(e->virtualName())});
         }
         return result;
     }
