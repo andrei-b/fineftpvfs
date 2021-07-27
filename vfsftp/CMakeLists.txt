@@ -11,14 +11,15 @@ set(sources
     src/plugins/gcfselement.cpp
     src/plugins/gcfilesystem.cpp
     src/plugins/utils.cpp
-)
+        src/config.cpp src/config.h)
 
 set(headers
         src/plugins/vfsfileintf.h
         src/plugins/vfsfileinfo.h
         src/plugins/gcfilesystem.h
         src/plugins/gcfselement.h
-        src/plugins/utils.h)
+        src/plugins/utils.h
+        nlohmann/json.hpp)
 
 add_subdirectory(fmt)
 

@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/andrey/fineftpvfs/vfsftp/src/config.cpp" "/home/andrey/fineftpvfs/cmake-build-debug/vfsftp/CMakeFiles/vfsftp.dir/src/config.cpp.o"
   "/home/andrey/fineftpvfs/vfsftp/src/main.cpp" "/home/andrey/fineftpvfs/cmake-build-debug/vfsftp/CMakeFiles/vfsftp.dir/src/main.cpp.o"
   "/home/andrey/fineftpvfs/vfsftp/src/plugins/gcfilesystem.cpp" "/home/andrey/fineftpvfs/cmake-build-debug/vfsftp/CMakeFiles/vfsftp.dir/src/plugins/gcfilesystem.cpp.o"
   "/home/andrey/fineftpvfs/vfsftp/src/plugins/gcfselement.cpp" "/home/andrey/fineftpvfs/cmake-build-debug/vfsftp/CMakeFiles/vfsftp.dir/src/plugins/gcfselement.cpp.o"

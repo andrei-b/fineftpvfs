@@ -167,6 +167,12 @@
 		<Unit filename="/home/andrey/fineftpvfs/vfsftp/fmt/src/os.cc">
 			<Option target="fmt"/>
 		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/vfsftp/src/config.cpp">
+			<Option target="vfsftp"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/vfsftp/src/config.h">
+			<Option target="vfsftp"/>
+		</Unit>
 		<Unit filename="/home/andrey/fineftpvfs/vfsftp/src/main.cpp">
 			<Option target="vfsftp"/>
 		</Unit>

@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/vfsftp.dir/src/config.cpp.o"
   "CMakeFiles/vfsftp.dir/src/main.cpp.o"
   "CMakeFiles/vfsftp.dir/src/plugins/gcfilesystem.cpp.o"
   "CMakeFiles/vfsftp.dir/src/plugins/gcfselement.cpp.o"

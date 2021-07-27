@@ -190,6 +190,33 @@ vfsftp/fast:
 	cd /home/andrey/fineftpvfs/cmake-build-debug && $(MAKE) $(MAKESILENT) -f vfsftp/CMakeFiles/vfsftp.dir/build.make vfsftp/CMakeFiles/vfsftp.dir/build
 .PHONY : vfsftp/fast
 
+src/config.o: src/config.cpp.o
+
+.PHONY : src/config.o
+
+# target to build an object file
+src/config.cpp.o:
+	cd /home/andrey/fineftpvfs/cmake-build-debug && $(MAKE) $(MAKESILENT) -f vfsftp/CMakeFiles/vfsftp.dir/build.make vfsftp/CMakeFiles/vfsftp.dir/src/config.cpp.o
+.PHONY : src/config.cpp.o
+
+src/config.i: src/config.cpp.i
+
+.PHONY : src/config.i
+
+# target to preprocess a source file
+src/config.cpp.i:
+	cd /home/andrey/fineftpvfs/cmake-build-debug && $(MAKE) $(MAKESILENT) -f vfsftp/CMakeFiles/vfsftp.dir/build.make vfsftp/CMakeFiles/vfsftp.dir/src/config.cpp.i
+.PHONY : src/config.cpp.i
+
+src/config.s: src/config.cpp.s
+
+.PHONY : src/config.s
+
+# target to generate assembly for a file
+src/config.cpp.s:
+	cd /home/andrey/fineftpvfs/cmake-build-debug && $(MAKE) $(MAKESILENT) -f vfsftp/CMakeFiles/vfsftp.dir/build.make vfsftp/CMakeFiles/vfsftp.dir/src/config.cpp.s
+.PHONY : src/config.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -311,6 +338,9 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... vfsftp"
+	@echo "... src/config.o"
+	@echo "... src/config.i"
+	@echo "... src/config.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

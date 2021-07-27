@@ -180,12 +180,12 @@ vfsftp/CMakeFiles/vfsftp.dir/all: fineftp-server/CMakeFiles/server.dir/all
 vfsftp/CMakeFiles/vfsftp.dir/all: vfsftp/fmt/CMakeFiles/fmt.dir/all
 	$(MAKE) $(MAKESILENT) -f vfsftp/CMakeFiles/vfsftp.dir/build.make vfsftp/CMakeFiles/vfsftp.dir/depend
 	$(MAKE) $(MAKESILENT) -f vfsftp/CMakeFiles/vfsftp.dir/build.make vfsftp/CMakeFiles/vfsftp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andrey/fineftpvfs/cmake-build-debug/CMakeFiles --progress-num=12,13,14,15,16 "Built target vfsftp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andrey/fineftpvfs/cmake-build-debug/CMakeFiles --progress-num=12,13,14,15,16,17 "Built target vfsftp"
 .PHONY : vfsftp/CMakeFiles/vfsftp.dir/all
 
 # Build rule for subdir invocation for target.
 vfsftp/CMakeFiles/vfsftp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andrey/fineftpvfs/cmake-build-debug/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andrey/fineftpvfs/cmake-build-debug/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vfsftp/CMakeFiles/vfsftp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/andrey/fineftpvfs/cmake-build-debug/CMakeFiles 0
 .PHONY : vfsftp/CMakeFiles/vfsftp.dir/rule
