@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="FMT"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\vfsftp\;CMake Files\vfsftp\fmt\;CMake Files\vfsftp\fmt\support\;CMake Files\vfsftp\fmt\support\cmake\;CMake Files\fineftp-server\;CMake Files\cmake\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/andrey/fineftpvfs/cmake-build-debug/vfsftp/fmt"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/andrey/fineftpvfs/cmake-build-debug/vfsftp/fmt/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/andrey/fineftpvfs/cmake-build-debug/vfsftp/fmt/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/andrey/fineftpvfs/cmake-build-debug/vfsftp/fmt/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/andrey/fineftpvfs/cmake-build-debug/vfsftp/fmt/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="fmt">
+				<Option output="/home/andrey/fineftpvfs/cmake-build-debug/vfsftp/fmt/libfmtd.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/andrey/fineftpvfs/cmake-build-debug/vfsftp/fmt"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/andrey/fineftpvfs/vfsftp/fmt/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/andrey/fineftpvfs/cmake-build-debug/vfsftp/fmt/Makefile&quot;  VERBOSE=1 fmt"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/andrey/fineftpvfs/cmake-build-debug/vfsftp/fmt/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/andrey/fineftpvfs/cmake-build-debug/vfsftp/fmt/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/andrey/fineftpvfs/cmake-build-debug/vfsftp/fmt/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="fmt/fast">
+				<Option output="/home/andrey/fineftpvfs/cmake-build-debug/vfsftp/fmt/libfmtd.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/andrey/fineftpvfs/cmake-build-debug/vfsftp/fmt"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/andrey/fineftpvfs/vfsftp/fmt/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/andrey/fineftpvfs/cmake-build-debug/vfsftp/fmt/Makefile&quot;  VERBOSE=1 fmt/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/andrey/fineftpvfs/cmake-build-debug/vfsftp/fmt/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/andrey/fineftpvfs/cmake-build-debug/vfsftp/fmt/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/andrey/fineftpvfs/cmake-build-debug/vfsftp/fmt/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/andrey/fineftpvfs/vfsftp/fmt/ChangeLog.rst">
+			<Option target="fmt"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/vfsftp/fmt/README.rst">
+			<Option target="fmt"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/vfsftp/fmt/include/fmt/args.h">
+			<Option target="fmt"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/vfsftp/fmt/include/fmt/chrono.h">
+			<Option target="fmt"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/vfsftp/fmt/include/fmt/color.h">
+			<Option target="fmt"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/vfsftp/fmt/include/fmt/compile.h">
+			<Option target="fmt"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/vfsftp/fmt/include/fmt/core.h">
+			<Option target="fmt"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/vfsftp/fmt/include/fmt/format-inl.h">
+			<Option target="fmt"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/vfsftp/fmt/include/fmt/format.h">
+			<Option target="fmt"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/vfsftp/fmt/include/fmt/locale.h">
+			<Option target="fmt"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/vfsftp/fmt/include/fmt/os.h">
+			<Option target="fmt"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/vfsftp/fmt/include/fmt/ostream.h">
+			<Option target="fmt"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/vfsftp/fmt/include/fmt/printf.h">
+			<Option target="fmt"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/vfsftp/fmt/include/fmt/ranges.h">
+			<Option target="fmt"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/vfsftp/fmt/include/fmt/xchar.h">
+			<Option target="fmt"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/vfsftp/fmt/src/format.cc">
+			<Option target="fmt"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/vfsftp/fmt/src/os.cc">
+			<Option target="fmt"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/msvc_sourcetree.cmake">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/vfsftp/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\vfsftp\"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/vfsftp/fmt/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\vfsftp\fmt\"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/vfsftp/fmt/support/cmake/JoinPaths.cmake">
+			<Option virtualFolder="CMake Files\vfsftp\fmt\support\cmake\"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/vfsftp/fmt/support/cmake/cxx14.cmake">
+			<Option virtualFolder="CMake Files\vfsftp\fmt\support\cmake\"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/fineftp-server/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\fineftp-server\"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/cmake/Findasio.cmake">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+		<Unit filename="/home/andrey/fineftpvfs/cmake/fineftpConfig.cmake.in">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

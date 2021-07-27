@@ -272,7 +272,7 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Value Computed by CMake
-FMT_BINARY_DIR:STATIC=/home/andrey/fineftpvfs/cmake-build-debug/example/fmt
+FMT_BINARY_DIR:STATIC=/home/andrey/fineftpvfs/cmake-build-debug/vfsftp/fmt
 
 //Generate the cuda-test target.
 FMT_CUDA_TEST:BOOL=OFF
@@ -303,7 +303,7 @@ FMT_OS:BOOL=ON
 FMT_PEDANTIC:BOOL=OFF
 
 //Value Computed by CMake
-FMT_SOURCE_DIR:STATIC=/home/andrey/fineftpvfs/example/fmt
+FMT_SOURCE_DIR:STATIC=/home/andrey/fineftpvfs/vfsftp/fmt
 
 //Generate the test target.
 FMT_TEST:BOOL=OFF
@@ -336,10 +336,10 @@ server_BINARY_DIR:STATIC=/home/andrey/fineftpvfs/cmake-build-debug/fineftp-serve
 server_SOURCE_DIR:STATIC=/home/andrey/fineftpvfs/fineftp-server
 
 //Value Computed by CMake
-vfsftp_BINARY_DIR:STATIC=/home/andrey/fineftpvfs/cmake-build-debug/example
+vfsftp_BINARY_DIR:STATIC=/home/andrey/fineftpvfs/cmake-build-debug/vfsftp
 
 //Value Computed by CMake
-vfsftp_SOURCE_DIR:STATIC=/home/andrey/fineftpvfs/example
+vfsftp_SOURCE_DIR:STATIC=/home/andrey/fineftpvfs/vfsftp
 
 
 ########################

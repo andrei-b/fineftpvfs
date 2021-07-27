@@ -23,4 +23,4 @@ if (_cmp)
 endif()
 
 add_subdirectory(fineftp-server)
-add_subdirectory(example)
+add_subdirectory(vfsftp)

@@ -11,7 +11,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/andrey/clion-2020.2.3/bin/cmake/linux/share/cmake-3.19/Modules/CMakeCXXInformation.cmake"
   "/home/andrey/clion-2020.2.3/bin/cmake/linux/share/cmake-3.19/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake"
   "/home/andrey/clion-2020.2.3/bin/cmake/linux/share/cmake-3.19/Modules/CMakeCommonLanguageInclude.cmake"
-  "/home/andrey/clion-2020.2.3/bin/cmake/linux/share/cmake-3.19/Modules/CMakeConfigurableFile.in"
   "/home/andrey/clion-2020.2.3/bin/cmake/linux/share/cmake-3.19/Modules/CMakeExtraGeneratorDetermineCompilerMacrosAndIncludeDirs.cmake"
   "/home/andrey/clion-2020.2.3/bin/cmake/linux/share/cmake-3.19/Modules/CMakeFindCodeBlocks.cmake"
   "/home/andrey/clion-2020.2.3/bin/cmake/linux/share/cmake-3.19/Modules/CMakeGenericSystem.cmake"
@@ -50,12 +49,12 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.19.2/CMakeSystem.cmake"
   "../cmake/Findasio.cmake"
   "../cmake/fineftpConfig.cmake.in"
-  "../example/CMakeLists.txt"
-  "../example/fmt/CMakeLists.txt"
-  "../example/fmt/support/cmake/JoinPaths.cmake"
-  "../example/fmt/support/cmake/cxx14.cmake"
   "../fineftp-server/CMakeLists.txt"
   "../msvc_sourcetree.cmake"
+  "../vfsftp/CMakeLists.txt"
+  "../vfsftp/fmt/CMakeLists.txt"
+  "../vfsftp/fmt/support/cmake/JoinPaths.cmake"
+  "../vfsftp/fmt/support/cmake/cxx14.cmake"
   )
 
 # The corresponding makefile is:
@@ -69,13 +68,13 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "fineftp-server/cmake/fineftpConfig.cmake"
   "fineftp-server/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "example/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "example/fmt/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "vfsftp/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "vfsftp/fmt/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "fineftp-server/CMakeFiles/server.dir/DependInfo.cmake"
-  "example/CMakeFiles/vfsftp.dir/DependInfo.cmake"
-  "example/fmt/CMakeFiles/fmt.dir/DependInfo.cmake"
+  "vfsftp/CMakeFiles/vfsftp.dir/DependInfo.cmake"
+  "vfsftp/fmt/CMakeFiles/fmt.dir/DependInfo.cmake"
   )

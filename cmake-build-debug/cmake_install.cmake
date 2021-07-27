@@ -45,7 +45,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/andrey/fineftpvfs/cmake-build-debug/fineftp-server/cmake_install.cmake")
-  include("/home/andrey/fineftpvfs/cmake-build-debug/example/cmake_install.cmake")
+  include("/home/andrey/fineftpvfs/cmake-build-debug/vfsftp/cmake_install.cmake")
 
 endif()
 

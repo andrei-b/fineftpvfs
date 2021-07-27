@@ -5,7 +5,7 @@
 		<Option title="server"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\example\;CMake Files\example\fmt\;CMake Files\example\fmt\support\;CMake Files\example\fmt\support\cmake\;CMake Files\fineftp-server\;CMake Files\cmake\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\vfsftp\;CMake Files\vfsftp\fmt\;CMake Files\vfsftp\fmt\support\;CMake Files\vfsftp\fmt\support\cmake\;CMake Files\fineftp-server\;CMake Files\cmake\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/home/andrey/fineftpvfs/cmake-build-debug/fineftp-server"/>
@@ -135,17 +135,17 @@
 		<Unit filename="/home/andrey/fineftpvfs/msvc_sourcetree.cmake">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/home/andrey/fineftpvfs/example/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\example\"/>
+		<Unit filename="/home/andrey/fineftpvfs/vfsftp/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\vfsftp\"/>
 		</Unit>
-		<Unit filename="/home/andrey/fineftpvfs/example/fmt/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\example\fmt\"/>
+		<Unit filename="/home/andrey/fineftpvfs/vfsftp/fmt/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\vfsftp\fmt\"/>
 		</Unit>
-		<Unit filename="/home/andrey/fineftpvfs/example/fmt/support/cmake/JoinPaths.cmake">
-			<Option virtualFolder="CMake Files\example\fmt\support\cmake\"/>
+		<Unit filename="/home/andrey/fineftpvfs/vfsftp/fmt/support/cmake/JoinPaths.cmake">
+			<Option virtualFolder="CMake Files\vfsftp\fmt\support\cmake\"/>
 		</Unit>
-		<Unit filename="/home/andrey/fineftpvfs/example/fmt/support/cmake/cxx14.cmake">
-			<Option virtualFolder="CMake Files\example\fmt\support\cmake\"/>
+		<Unit filename="/home/andrey/fineftpvfs/vfsftp/fmt/support/cmake/cxx14.cmake">
+			<Option virtualFolder="CMake Files\vfsftp\fmt\support\cmake\"/>
 		</Unit>
 		<Unit filename="/home/andrey/fineftpvfs/fineftp-server/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\fineftp-server\"/>

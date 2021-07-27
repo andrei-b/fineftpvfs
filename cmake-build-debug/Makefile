@@ -198,7 +198,7 @@ vfsftp: cmake_check_build_system
 
 # fast build rule for target.
 vfsftp/fast:
-	$(MAKE) $(MAKESILENT) -f example/CMakeFiles/vfsftp.dir/build.make example/CMakeFiles/vfsftp.dir/build
+	$(MAKE) $(MAKESILENT) -f vfsftp/CMakeFiles/vfsftp.dir/build.make vfsftp/CMakeFiles/vfsftp.dir/build
 .PHONY : vfsftp/fast
 
 #=============================================================================
@@ -211,7 +211,7 @@ fmt: cmake_check_build_system
 
 # fast build rule for target.
 fmt/fast:
-	$(MAKE) $(MAKESILENT) -f example/fmt/CMakeFiles/fmt.dir/build.make example/fmt/CMakeFiles/fmt.dir/build
+	$(MAKE) $(MAKESILENT) -f vfsftp/fmt/CMakeFiles/fmt.dir/build.make vfsftp/fmt/CMakeFiles/fmt.dir/build
 .PHONY : fmt/fast
 
 # Help Target
