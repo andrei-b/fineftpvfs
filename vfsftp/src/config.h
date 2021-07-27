@@ -31,8 +31,8 @@ public:
         auto defRoot = "/home/nanocore/vfsftpd";
         if (_config.contains("vfsftp")) {
             nlohmann::json ftpc = _config.value("vsftp", "");
-            if (ftpc.contains("port"))
-                return ftpc.value("port", defRoot);
+            if (ftpc.contains("fsroot"))
+                return ftpc.value("fsroot", defRoot);
         }
         return defRoot;
     }
