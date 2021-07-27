@@ -9,6 +9,12 @@ vfsftp/CMakeFiles/vfsftp.dir/src/main.cpp.o: ../fineftp-server/include/fineftp/f
 vfsftp/CMakeFiles/vfsftp.dir/src/main.cpp.o: ../fineftp-server/include/fineftp/fileiointerface.h
 vfsftp/CMakeFiles/vfsftp.dir/src/main.cpp.o: ../fineftp-server/include/fineftp/permissions.h
 vfsftp/CMakeFiles/vfsftp.dir/src/main.cpp.o: ../fineftp-server/include/fineftp/server.h
+vfsftp/CMakeFiles/vfsftp.dir/src/main.cpp.o: ../vfsftp/fmt/include/fmt/core.h
+vfsftp/CMakeFiles/vfsftp.dir/src/main.cpp.o: ../vfsftp/fmt/include/fmt/format-inl.h
+vfsftp/CMakeFiles/vfsftp.dir/src/main.cpp.o: ../vfsftp/fmt/include/fmt/format.h
+vfsftp/CMakeFiles/vfsftp.dir/src/main.cpp.o: ../vfsftp/fmt/include/fmt/xchar.h
+vfsftp/CMakeFiles/vfsftp.dir/src/main.cpp.o: ../vfsftp/nlohmann/json.hpp
+vfsftp/CMakeFiles/vfsftp.dir/src/main.cpp.o: ../vfsftp/src/config.h
 vfsftp/CMakeFiles/vfsftp.dir/src/main.cpp.o: ../vfsftp/src/main.cpp
 vfsftp/CMakeFiles/vfsftp.dir/src/main.cpp.o: ../vfsftp/src/plugins/gcfilesystem.h
 vfsftp/CMakeFiles/vfsftp.dir/src/main.cpp.o: ../vfsftp/src/plugins/gcfselement.h

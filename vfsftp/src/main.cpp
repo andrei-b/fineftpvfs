@@ -10,7 +10,7 @@
 #include <thread>
 #include <string>
 
-const std::string ConfigPath = "/etc/mantle.json";
+const std::string ConfigPath = "/home/andrey/temp/config.json"; //"/etc/mantle.json";
 
 int main() {
 
@@ -30,7 +30,6 @@ int main() {
   // Create an FTP Server on port 2121. We use 2121 instead of the default port
   // 21, as your application would need root privileges to open port 21.
 
-    std::cout << fmt::format("Server port: {}\n", config.port());
   fineftp::FtpServer server(config.port());
 
   // Add the well known anonymous user and some normal users. The anonymous user
@@ -38,8 +37,9 @@ int main() {
   // users have to provide their username and password. 
 
   auto users = config.users();
+  if (users.empty())
+      std::cout << "Warning : no users added\n";
   for(const auto & r : users) {
-      std::cout << fmt::format("Adding user: {}\n", r.first);
       if (r.first == "anonymous") {
           server.addUserAnonymous(local_root, fineftp::Permission::All);
       }
@@ -50,7 +50,6 @@ int main() {
   // Start the FTP server with 4 threads. More threads will increase the
   // performance with multiple clients, but don't over-do it.
   server.start(2);
-    std::cout << "VFSFTP is running" << std::endl;
   // Prevent the application from exiting immediatelly
   for (;;)
   {

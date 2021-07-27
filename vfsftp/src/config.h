@@ -20,7 +20,7 @@ public:
     {
         auto defPort = 21;
         if (_config.contains("vfsftp")) {
-            nlohmann::json ftpc = _config.value("vsftp", "");
+            nlohmann::json ftpc = _config.value("vfsftp", nlohmann::json());
             if (ftpc.contains("port"))
                 return ftpc.value("port", defPort);
         }
@@ -30,7 +30,7 @@ public:
     {
         auto defRoot = "/home/nanocore/vfsftpd";
         if (_config.contains("vfsftp")) {
-            nlohmann::json ftpc = _config.value("vsftp", "");
+            nlohmann::json ftpc = _config.value("vfsftp", nlohmann::json());
             if (ftpc.contains("fsroot"))
                 return ftpc.value("fsroot", defRoot);
         }
@@ -39,14 +39,12 @@ public:
     std::map<std::string, std::string> users() {
         std::map<std::string, std::string> result;
         if (_config.contains("vfsftp")) {
-            nlohmann::json ftpc = _config.value("vsftp", "");
+            nlohmann::json ftpc = _config.value("vfsftp", nlohmann::json());
             if (ftpc.contains("users")) {
-                nlohmann::json users = _config.value("users", "");
-                for (auto rec : users) {
-                    std::string login = rec["login"];
-                    std::string pwd = rec["password"];
-                    result.insert({login, pwd});
-                }
+                std::vector<std::map<std::string, std::string>> array = ftpc.at("users").get<std::vector<std::map<std::string, std::string>>>();
+                for (const auto & r : array)
+                    result.insert({r.at("login"), r.at("pwd")});
+                return result;
             }
         }
         return result;
