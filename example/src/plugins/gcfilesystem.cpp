@@ -26,8 +26,7 @@ namespace GCFS {
 
     void GCFileSystem::makeSystem(const std::string &root) {
         _fsroot = std::make_shared<GCFSElement>(root, "/", ElementType::RealDirectory, 0);
-        addChildren(*_fsroot, root);
-
+        addChildren(*_fsroot);
     }
 
     const std::string LayerTagRe = "\\(<LAYER *(number)? *= *(\\d*)>\\)\r*\n";
@@ -42,17 +41,17 @@ namespace GCFS {
         }
     }
 
-    void GCFileSystem::addChildren(GCFSElement & parent, const std::string &path) {
+    void GCFileSystem::addChildren(GCFSElement & parent) {
         using namespace std::experimental;
         if (parent.type() == ElementType::RealDirectory) {
-            for (const auto &entry : filesystem::directory_iterator(path)) {
+            for (const auto &entry : filesystem::directory_iterator(parent.fileName())) {
                 if (filesystem::is_directory(entry.status())) {
                     auto newChild = parent.addChild(entry.path().string(), "", ElementType::RealDirectory, 0);
-                    addChildren(*newChild, entry.path().string());
+                    addChildren(*newChild);
                 } else {
                     if (filesystem::is_regular_file(entry.status())) {
                         auto newChild = parent.addChild(entry.path().string(), "", ElementType::VirtualDirectory, 0);
-                        addChildren(*newChild, entry.path().string());
+                        addChildren(*newChild);
                     }
                 }
             }
@@ -63,7 +62,7 @@ namespace GCFS {
                 auto l = mainProgram.length();
                 offsetsByTag(mainProgram, LayerTagRe, offsets, "LAYER_", 2);
                 offsetsByTag(mainProgram, LabelTagRe, offsets, "label_", 1);
-                parent.addChild(parent.fileName(), "", ElementType::File, mainProgram.length());
+                parent.addChild(parent.fileName(), fmt::format("{}{}", '!', parent.localName()), ElementType::File, mainProgram.length());
                 int ord = 0;
                 for(const auto & r : offsets) {
                     parent.addChild(parent.fileName(), fmt::format("{:04d}_{}.nc", ord, r.second), ElementType::File, l - r.first, r.first);
