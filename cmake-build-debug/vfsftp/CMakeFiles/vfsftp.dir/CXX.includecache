@@ -452,10 +452,6 @@ limits
 type_traits
 -
 
-/home/andrey/fineftpvfs/vfsftp/src/config.cpp
-config.h
-/home/andrey/fineftpvfs/vfsftp/src/config.h
-
 /home/andrey/fineftpvfs/vfsftp/src/config.h
 ../nlohmann/json.hpp
 /home/andrey/fineftpvfs/vfsftp/nlohmann/json.hpp

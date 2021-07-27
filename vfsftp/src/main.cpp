@@ -10,7 +10,7 @@
 #include <thread>
 #include <string>
 
-const std::string ConfigPath = "/home/andrey/temp/config.json"; //"/etc/mantle.json";
+const std::string ConfigPath = "/etc/mantle.json";
 
 int main() {
 
